@@ -1,0 +1,22 @@
+name: my-docker-project
+
+version: '3.8'  # Specify the version of Docker Compose
+
+services:
+  my-service:
+    image: my-docker-image  # The Docker image to use
+    container_name: my-docker-container  # The name of the container
+    ports:
+      - "8001:8000"  # Map port 8000 in the container to port 8001 on the host
+    volumes:
+      - .:/app  # Mount the current directory to /app in the container
+    # Optional: Add environment variables if needed
+    # environment:
+    #   - ENV_VAR_NAME=value
+    # Optional: Specify any commands to run
+    # command: python app.py
+
+# Optional: Define networks or other configurations here
+# networks:
+#   default:
+#     driver: bridge
